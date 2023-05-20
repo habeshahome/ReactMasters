@@ -4,6 +4,7 @@ import App from "./App";
 import Shop from './pages/Shop/Shop';
 import { Product } from './pages/Shop';
 import { Game } from './pages/Game';
+import { ProtectRoute } from './middleware/ProtectRoute';
 
 export const router = createBrowserRouter([
     {
@@ -13,6 +14,10 @@ export const router = createBrowserRouter([
     {
         path: "/game",
         element: <Game />
+    },
+    {// Protected Route --- continue on this
+        path: '/admin',
+        element: <ProtectRoute user={{}} children={<> <h1> ADMIN PAGE </h1></>} allowed={true} fallbackUrl='/game' />
     },
     {
         path: "/shop",
@@ -32,6 +37,10 @@ export const router = createBrowserRouter([
         },
         errorElement: <div> Error </div>
     },
+    {
+        path: "/*",
+        element: <h1> 404 <br/> Page Not Found Broda! </h1>
+    }
 ])
 
 
