@@ -5,6 +5,7 @@ import './App.css'
 import { StyledComponentsDemo } from './styledComponents'
 import { Button, ThemeProvider } from '@mui/material'
 import { theme } from './theme'
+import RAC from './charts'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,7 +17,7 @@ function App() {
         <Button color='primary' variant='contained'> Lovely Augmentation </Button>
       </ThemeProvider>
       <StyledComponentsDemo />
-      
+      <RAC />
     </>
   )
 }
